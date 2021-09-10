@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corona-tracker
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: corona-tracker
+  template:
+    metadata:
+      labels:
+        app: corona-tracker
+    spec:
+      containers:
+      - name: corona-tracker
+        image: shiladityaiitm/corona-tracker:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: corona-tracker-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: corona-tracker
+  ports:
+  - port: 8558
+    targetPort: 8080
+    nodePort: 30001

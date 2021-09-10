@@ -1,0 +1,4 @@
+com/shiladitya/coronatracker/models/LocationStats.class
+com/shiladitya/coronatracker/CoronaTrackerApplication.class
+com/shiladitya/coronatracker/controllers/CoronaTrackerPresentation.class
+com/shiladitya/coronatracker/services/CoronaDataTracker.class
